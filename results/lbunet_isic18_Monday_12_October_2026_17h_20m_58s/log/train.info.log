@@ -1,0 +1,473 @@
+2026-10-12 17:20:58 - #----------Config info----------#
+2026-10-12 17:20:58 - network: lbunet,
+2026-10-12 17:20:58 - model_config: {'num_classes': 1, 'input_channels': 3, 'c_list': [16, 24, 32, 48, 64, 96], 'bridge': True, 'gt_ds': True},
+2026-10-12 17:20:58 - datasets: isic18,
+2026-10-12 17:20:58 - data_path: ./data/isic2018/,
+2026-10-12 17:20:58 - criterion: GT_BceDiceLoss(
+  (bcedice): BceDiceLoss(
+    (bce): BCELoss()
+    (dice): DiceLoss()
+  )
+  (bcedice2): BceDiceLoss(
+    (bce): BCELoss()
+    (dice): DiceLoss()
+  )
+),
+2026-10-12 17:20:58 - pretrained_path: ./pre_trained/,
+2026-10-12 17:20:58 - num_classes: 1,
+2026-10-12 17:20:58 - input_size_h: 256,
+2026-10-12 17:20:58 - input_size_w: 256,
+2026-10-12 17:20:58 - input_channels: 3,
+2026-10-12 17:20:58 - distributed: False,
+2026-10-12 17:20:58 - local_rank: -1,
+2026-10-12 17:20:58 - num_workers: 2,
+2026-10-12 17:20:58 - seed: 42,
+2026-10-12 17:20:58 - world_size: None,
+2026-10-12 17:20:58 - rank: None,
+2026-10-12 17:20:58 - amp: True,
+2026-10-12 17:20:58 - gpu_id: 0,
+2026-10-12 17:20:58 - batch_size: 8,
+2026-10-12 17:20:58 - epochs: 30,
+2026-10-12 17:20:58 - patience: 10,
+2026-10-12 17:20:58 - work_dir: results/lbunet_isic18_Monday_12_October_2026_17h_20m_58s/,
+2026-10-12 17:20:58 - print_interval: 20,
+2026-10-12 17:20:58 - val_interval: 1,
+2026-10-12 17:20:58 - save_interval: 20,
+2026-10-12 17:20:58 - threshold: 0.5,
+2026-10-12 17:20:58 - train_transformer: Compose(
+    <utils.myNormalize object at 0x000001C85DB22E10>
+    <utils.myToTensor object at 0x000001C85DB231A0>
+    <utils.myRandomHorizontalFlip object at 0x000001C85E61A000>
+    <utils.myRandomVerticalFlip object at 0x000001C85E1D4FB0>
+    <utils.myRandomRotation object at 0x000001C85E65EAE0>
+    <utils.myResize object at 0x000001C85E65EB70>
+),
+2026-10-12 17:20:58 - test_transformer: Compose(
+    <utils.myNormalize object at 0x000001C85E65EC00>
+    <utils.myToTensor object at 0x000001C85E65EC30>
+    <utils.myResize object at 0x000001C85E65EC60>
+),
+2026-10-12 17:20:58 - opt: AdamW,
+2026-10-12 17:20:58 - lr: 0.001,
+2026-10-12 17:20:58 - betas: (0.9, 0.999),
+2026-10-12 17:20:58 - eps: 1e-08,
+2026-10-12 17:20:58 - weight_decay: 0.0001,
+2026-10-12 17:20:58 - amsgrad: False,
+2026-10-12 17:20:58 - sch: WP_CosineLR,
+2026-10-12 17:20:58 - warm_up_epochs: 5,
+2026-10-12 17:20:59 - Model parameters: 0.099M
+2026-10-12 17:21:28 - train: epoch 1/30, iter:0/236, loss: 8.1550, lr: 0.000200
+2026-10-12 17:21:36 - train: epoch 1/30, iter:20/236, loss: 6.3882, lr: 0.000200
+2026-10-12 17:21:44 - train: epoch 1/30, iter:40/236, loss: 5.3977, lr: 0.000200
+2026-10-12 17:21:52 - train: epoch 1/30, iter:60/236, loss: 4.8262, lr: 0.000200
+2026-10-12 17:22:00 - train: epoch 1/30, iter:80/236, loss: 4.4524, lr: 0.000200
+2026-10-12 17:22:08 - train: epoch 1/30, iter:100/236, loss: 4.1460, lr: 0.000200
+2026-10-12 17:22:17 - train: epoch 1/30, iter:120/236, loss: 3.9402, lr: 0.000200
+2026-10-12 17:22:24 - train: epoch 1/30, iter:140/236, loss: 3.7587, lr: 0.000200
+2026-10-12 17:22:32 - train: epoch 1/30, iter:160/236, loss: 3.6049, lr: 0.000200
+2026-10-12 17:22:40 - train: epoch 1/30, iter:180/236, loss: 3.4983, lr: 0.000200
+2026-10-12 17:22:44 - train: epoch 1/30, iter:200/236, loss: 3.4076, lr: 0.000200
+2026-10-12 17:22:47 - train: epoch 1/30, iter:220/236, loss: 3.3042, lr: 0.000200
+2026-10-12 17:23:53 - val epoch: 1, loss: 0.0000, acc: 89.95%, dice/f1: 75.42%, miou: 64.13%, sens: 63.32%, spec: 98.52%
+2026-10-12 17:23:53 - --> Saved new BEST checkpoint at epoch 1: Dice=75.42%, Acc=89.95%, mIoU=64.13%
+2026-10-12 17:24:04 - train: epoch 2/30, iter:0/236, loss: 1.8582, lr: 0.000400
+2026-10-12 17:24:05 - train: epoch 2/30, iter:20/236, loss: 2.3043, lr: 0.000400
+2026-10-12 17:24:07 - train: epoch 2/30, iter:40/236, loss: 2.2311, lr: 0.000400
+2026-10-12 17:24:08 - train: epoch 2/30, iter:60/236, loss: 2.2629, lr: 0.000400
+2026-10-12 17:24:10 - train: epoch 2/30, iter:80/236, loss: 2.1925, lr: 0.000400
+2026-10-12 17:24:11 - train: epoch 2/30, iter:100/236, loss: 2.1742, lr: 0.000400
+2026-10-12 17:24:13 - train: epoch 2/30, iter:120/236, loss: 2.1504, lr: 0.000400
+2026-10-12 17:24:14 - train: epoch 2/30, iter:140/236, loss: 2.1151, lr: 0.000400
+2026-10-12 17:24:16 - train: epoch 2/30, iter:160/236, loss: 2.1006, lr: 0.000400
+2026-10-12 17:24:17 - train: epoch 2/30, iter:180/236, loss: 2.0767, lr: 0.000400
+2026-10-12 17:24:19 - train: epoch 2/30, iter:200/236, loss: 2.0545, lr: 0.000400
+2026-10-12 17:24:20 - train: epoch 2/30, iter:220/236, loss: 2.0437, lr: 0.000400
+2026-10-12 17:24:50 - val epoch: 2, loss: 0.0000, acc: 92.55%, dice/f1: 84.05%, miou: 73.27%, sens: 80.69%, spec: 96.36%
+2026-10-12 17:24:50 - --> Saved new BEST checkpoint at epoch 2: Dice=84.05%, Acc=92.55%, mIoU=73.27%
+2026-10-12 17:25:00 - train: epoch 3/30, iter:0/236, loss: 1.4457, lr: 0.000600
+2026-10-12 17:25:02 - train: epoch 3/30, iter:20/236, loss: 1.8443, lr: 0.000600
+2026-10-12 17:25:03 - train: epoch 3/30, iter:40/236, loss: 1.7996, lr: 0.000600
+2026-10-12 17:25:05 - train: epoch 3/30, iter:60/236, loss: 1.7753, lr: 0.000600
+2026-10-12 17:25:06 - train: epoch 3/30, iter:80/236, loss: 1.7806, lr: 0.000600
+2026-10-12 17:25:08 - train: epoch 3/30, iter:100/236, loss: 1.7798, lr: 0.000600
+2026-10-12 17:25:09 - train: epoch 3/30, iter:120/236, loss: 1.7979, lr: 0.000600
+2026-10-12 17:25:11 - train: epoch 3/30, iter:140/236, loss: 1.8354, lr: 0.000600
+2026-10-12 17:25:13 - train: epoch 3/30, iter:160/236, loss: 1.8476, lr: 0.000600
+2026-10-12 17:25:19 - train: epoch 3/30, iter:180/236, loss: 1.8392, lr: 0.000600
+2026-10-12 17:25:20 - train: epoch 3/30, iter:200/236, loss: 1.8168, lr: 0.000600
+2026-10-12 17:25:22 - train: epoch 3/30, iter:220/236, loss: 1.8274, lr: 0.000600
+2026-10-12 17:25:51 - val epoch: 3, loss: 0.0000, acc: 92.89%, dice/f1: 84.62%, miou: 74.43%, sens: 80.41%, spec: 96.90%
+2026-10-12 17:25:51 - --> Saved new BEST checkpoint at epoch 3: Dice=84.62%, Acc=92.89%, mIoU=74.43%
+2026-10-12 17:26:02 - train: epoch 4/30, iter:0/236, loss: 2.5313, lr: 0.000800
+2026-10-12 17:26:04 - train: epoch 4/30, iter:20/236, loss: 1.7173, lr: 0.000800
+2026-10-12 17:26:05 - train: epoch 4/30, iter:40/236, loss: 1.6814, lr: 0.000800
+2026-10-12 17:26:07 - train: epoch 4/30, iter:60/236, loss: 1.6807, lr: 0.000800
+2026-10-12 17:26:08 - train: epoch 4/30, iter:80/236, loss: 1.6918, lr: 0.000800
+2026-10-12 17:26:10 - train: epoch 4/30, iter:100/236, loss: 1.6819, lr: 0.000800
+2026-10-12 17:26:11 - train: epoch 4/30, iter:120/236, loss: 1.6896, lr: 0.000800
+2026-10-12 17:26:13 - train: epoch 4/30, iter:140/236, loss: 1.6771, lr: 0.000800
+2026-10-12 17:26:14 - train: epoch 4/30, iter:160/236, loss: 1.6819, lr: 0.000800
+2026-10-12 17:26:16 - train: epoch 4/30, iter:180/236, loss: 1.6666, lr: 0.000800
+2026-10-12 17:26:17 - train: epoch 4/30, iter:200/236, loss: 1.6592, lr: 0.000800
+2026-10-12 17:26:19 - train: epoch 4/30, iter:220/236, loss: 1.6605, lr: 0.000800
+2026-10-12 17:26:48 - val epoch: 4, loss: 0.0000, acc: 93.03%, dice/f1: 84.34%, miou: 75.02%, sens: 77.12%, spec: 98.15%
+2026-10-12 17:26:48 - --> Saved new BEST checkpoint at epoch 4: Dice=84.34%, Acc=93.03%, mIoU=75.02%
+2026-10-12 17:26:59 - train: epoch 5/30, iter:0/236, loss: 1.8162, lr: 0.001000
+2026-10-12 17:27:00 - train: epoch 5/30, iter:20/236, loss: 1.4536, lr: 0.001000
+2026-10-12 17:27:02 - train: epoch 5/30, iter:40/236, loss: 1.6489, lr: 0.001000
+2026-10-12 17:27:03 - train: epoch 5/30, iter:60/236, loss: 1.6718, lr: 0.001000
+2026-10-12 17:27:05 - train: epoch 5/30, iter:80/236, loss: 1.6464, lr: 0.001000
+2026-10-12 17:27:06 - train: epoch 5/30, iter:100/236, loss: 1.6438, lr: 0.001000
+2026-10-12 17:27:08 - train: epoch 5/30, iter:120/236, loss: 1.6214, lr: 0.001000
+2026-10-12 17:27:09 - train: epoch 5/30, iter:140/236, loss: 1.6170, lr: 0.001000
+2026-10-12 17:27:11 - train: epoch 5/30, iter:160/236, loss: 1.5869, lr: 0.001000
+2026-10-12 17:27:12 - train: epoch 5/30, iter:180/236, loss: 1.5710, lr: 0.001000
+2026-10-12 17:27:14 - train: epoch 5/30, iter:200/236, loss: 1.5618, lr: 0.001000
+2026-10-12 17:27:15 - train: epoch 5/30, iter:220/236, loss: 1.5505, lr: 0.001000
+2026-10-12 17:27:45 - val epoch: 5, loss: 0.0000, acc: 92.24%, dice/f1: 84.43%, miou: 72.84%, sens: 86.48%, spec: 94.09%
+2026-10-12 17:27:45 - --> No improvement for 1/10 epoch(s). (Best: Epoch 4, Dice=84.34%)
+2026-10-12 17:27:55 - train: epoch 6/30, iter:0/236, loss: 1.7462, lr: 0.000996
+2026-10-12 17:27:57 - train: epoch 6/30, iter:20/236, loss: 1.5101, lr: 0.000996
+2026-10-12 17:27:58 - train: epoch 6/30, iter:40/236, loss: 1.5193, lr: 0.000996
+2026-10-12 17:28:00 - train: epoch 6/30, iter:60/236, loss: 1.4531, lr: 0.000996
+2026-10-12 17:28:01 - train: epoch 6/30, iter:80/236, loss: 1.4712, lr: 0.000996
+2026-10-12 17:28:03 - train: epoch 6/30, iter:100/236, loss: 1.4775, lr: 0.000996
+2026-10-12 17:28:04 - train: epoch 6/30, iter:120/236, loss: 1.4605, lr: 0.000996
+2026-10-12 17:28:06 - train: epoch 6/30, iter:140/236, loss: 1.4788, lr: 0.000996
+2026-10-12 17:28:07 - train: epoch 6/30, iter:160/236, loss: 1.4782, lr: 0.000996
+2026-10-12 17:28:09 - train: epoch 6/30, iter:180/236, loss: 1.4895, lr: 0.000996
+2026-10-12 17:28:10 - train: epoch 6/30, iter:200/236, loss: 1.4858, lr: 0.000996
+2026-10-12 17:28:12 - train: epoch 6/30, iter:220/236, loss: 1.4703, lr: 0.000996
+2026-10-12 17:28:41 - val epoch: 6, loss: 0.0000, acc: 92.90%, dice/f1: 85.32%, miou: 75.34%, sens: 84.79%, spec: 95.51%
+2026-10-12 17:28:41 - --> Saved new BEST checkpoint at epoch 6: Dice=85.32%, Acc=92.90%, mIoU=75.34%
+2026-10-12 17:28:52 - train: epoch 7/30, iter:0/236, loss: 1.8494, lr: 0.000984
+2026-10-12 17:28:53 - train: epoch 7/30, iter:20/236, loss: 1.4434, lr: 0.000984
+2026-10-12 17:28:55 - train: epoch 7/30, iter:40/236, loss: 1.4340, lr: 0.000984
+2026-10-12 17:28:56 - train: epoch 7/30, iter:60/236, loss: 1.4209, lr: 0.000984
+2026-10-12 17:28:58 - train: epoch 7/30, iter:80/236, loss: 1.4454, lr: 0.000984
+2026-10-12 17:28:59 - train: epoch 7/30, iter:100/236, loss: 1.4484, lr: 0.000984
+2026-10-12 17:29:01 - train: epoch 7/30, iter:120/236, loss: 1.4490, lr: 0.000984
+2026-10-12 17:29:02 - train: epoch 7/30, iter:140/236, loss: 1.4258, lr: 0.000984
+2026-10-12 17:29:04 - train: epoch 7/30, iter:160/236, loss: 1.4255, lr: 0.000984
+2026-10-12 17:29:05 - train: epoch 7/30, iter:180/236, loss: 1.4101, lr: 0.000984
+2026-10-12 17:29:07 - train: epoch 7/30, iter:200/236, loss: 1.4130, lr: 0.000984
+2026-10-12 17:29:08 - train: epoch 7/30, iter:220/236, loss: 1.4101, lr: 0.000984
+2026-10-12 17:29:37 - val epoch: 7, loss: 0.0000, acc: 93.13%, dice/f1: 84.68%, miou: 76.28%, sens: 78.03%, spec: 97.99%
+2026-10-12 17:29:37 - --> Saved new BEST checkpoint at epoch 7: Dice=84.68%, Acc=93.13%, mIoU=76.28%
+2026-10-12 17:29:48 - train: epoch 8/30, iter:0/236, loss: 1.0640, lr: 0.000965
+2026-10-12 17:29:49 - train: epoch 8/30, iter:20/236, loss: 1.5185, lr: 0.000965
+2026-10-12 17:29:51 - train: epoch 8/30, iter:40/236, loss: 1.4534, lr: 0.000965
+2026-10-12 17:29:52 - train: epoch 8/30, iter:60/236, loss: 1.4520, lr: 0.000965
+2026-10-12 17:29:54 - train: epoch 8/30, iter:80/236, loss: 1.4430, lr: 0.000965
+2026-10-12 17:29:56 - train: epoch 8/30, iter:100/236, loss: 1.4110, lr: 0.000965
+2026-10-12 17:29:57 - train: epoch 8/30, iter:120/236, loss: 1.4185, lr: 0.000965
+2026-10-12 17:29:59 - train: epoch 8/30, iter:140/236, loss: 1.4072, lr: 0.000965
+2026-10-12 17:30:00 - train: epoch 8/30, iter:160/236, loss: 1.3854, lr: 0.000965
+2026-10-12 17:30:02 - train: epoch 8/30, iter:180/236, loss: 1.3820, lr: 0.000965
+2026-10-12 17:30:03 - train: epoch 8/30, iter:200/236, loss: 1.3838, lr: 0.000965
+2026-10-12 17:30:05 - train: epoch 8/30, iter:220/236, loss: 1.3746, lr: 0.000965
+2026-10-12 17:30:34 - val epoch: 8, loss: 0.0000, acc: 93.35%, dice/f1: 85.15%, miou: 76.26%, sens: 78.35%, spec: 98.18%
+2026-10-12 17:30:34 - --> Saved new BEST checkpoint at epoch 8: Dice=85.15%, Acc=93.35%, mIoU=76.26%
+2026-10-12 17:30:44 - train: epoch 9/30, iter:0/236, loss: 1.6211, lr: 0.000938
+2026-10-12 17:30:46 - train: epoch 9/30, iter:20/236, loss: 1.2431, lr: 0.000938
+2026-10-12 17:30:47 - train: epoch 9/30, iter:40/236, loss: 1.2938, lr: 0.000938
+2026-10-12 17:30:49 - train: epoch 9/30, iter:60/236, loss: 1.3051, lr: 0.000938
+2026-10-12 17:30:50 - train: epoch 9/30, iter:80/236, loss: 1.3108, lr: 0.000938
+2026-10-12 17:30:52 - train: epoch 9/30, iter:100/236, loss: 1.3550, lr: 0.000938
+2026-10-12 17:30:53 - train: epoch 9/30, iter:120/236, loss: 1.3971, lr: 0.000938
+2026-10-12 17:30:55 - train: epoch 9/30, iter:140/236, loss: 1.3854, lr: 0.000938
+2026-10-12 17:30:56 - train: epoch 9/30, iter:160/236, loss: 1.3633, lr: 0.000938
+2026-10-12 17:30:58 - train: epoch 9/30, iter:180/236, loss: 1.3534, lr: 0.000938
+2026-10-12 17:30:59 - train: epoch 9/30, iter:200/236, loss: 1.3489, lr: 0.000938
+2026-10-12 17:31:01 - train: epoch 9/30, iter:220/236, loss: 1.3499, lr: 0.000938
+2026-10-12 17:31:30 - val epoch: 9, loss: 0.0000, acc: 93.82%, dice/f1: 87.00%, miou: 78.36%, sens: 85.03%, spec: 96.65%
+2026-10-12 17:31:30 - --> Saved new BEST checkpoint at epoch 9: Dice=87.00%, Acc=93.82%, mIoU=78.36%
+2026-10-12 17:31:40 - train: epoch 10/30, iter:0/236, loss: 1.0572, lr: 0.000905
+2026-10-12 17:31:42 - train: epoch 10/30, iter:20/236, loss: 1.2320, lr: 0.000905
+2026-10-12 17:31:43 - train: epoch 10/30, iter:40/236, loss: 1.2791, lr: 0.000905
+2026-10-12 17:31:45 - train: epoch 10/30, iter:60/236, loss: 1.2769, lr: 0.000905
+2026-10-12 17:31:46 - train: epoch 10/30, iter:80/236, loss: 1.3113, lr: 0.000905
+2026-10-12 17:31:48 - train: epoch 10/30, iter:100/236, loss: 1.2975, lr: 0.000905
+2026-10-12 17:31:49 - train: epoch 10/30, iter:120/236, loss: 1.2965, lr: 0.000905
+2026-10-12 17:31:51 - train: epoch 10/30, iter:140/236, loss: 1.2935, lr: 0.000905
+2026-10-12 17:31:52 - train: epoch 10/30, iter:160/236, loss: 1.3116, lr: 0.000905
+2026-10-12 17:31:54 - train: epoch 10/30, iter:180/236, loss: 1.2965, lr: 0.000905
+2026-10-12 17:31:55 - train: epoch 10/30, iter:200/236, loss: 1.2844, lr: 0.000905
+2026-10-12 17:31:57 - train: epoch 10/30, iter:220/236, loss: 1.2907, lr: 0.000905
+2026-10-12 17:32:26 - val epoch: 10, loss: 0.0000, acc: 93.42%, dice/f1: 86.61%, miou: 77.59%, sens: 87.44%, spec: 95.34%
+2026-10-12 17:32:26 - --> No improvement for 1/10 epoch(s). (Best: Epoch 9, Dice=87.00%)
+2026-10-12 17:32:36 - train: epoch 11/30, iter:0/236, loss: 1.3782, lr: 0.000864
+2026-10-12 17:32:38 - train: epoch 11/30, iter:20/236, loss: 1.4129, lr: 0.000864
+2026-10-12 17:32:39 - train: epoch 11/30, iter:40/236, loss: 1.3301, lr: 0.000864
+2026-10-12 17:32:40 - train: epoch 11/30, iter:60/236, loss: 1.3224, lr: 0.000864
+2026-10-12 17:32:42 - train: epoch 11/30, iter:80/236, loss: 1.3018, lr: 0.000864
+2026-10-12 17:32:43 - train: epoch 11/30, iter:100/236, loss: 1.3328, lr: 0.000864
+2026-10-12 17:32:45 - train: epoch 11/30, iter:120/236, loss: 1.3513, lr: 0.000864
+2026-10-12 17:32:46 - train: epoch 11/30, iter:140/236, loss: 1.3323, lr: 0.000864
+2026-10-12 17:32:48 - train: epoch 11/30, iter:160/236, loss: 1.2999, lr: 0.000864
+2026-10-12 17:32:49 - train: epoch 11/30, iter:180/236, loss: 1.2908, lr: 0.000864
+2026-10-12 17:32:51 - train: epoch 11/30, iter:200/236, loss: 1.2809, lr: 0.000864
+2026-10-12 17:32:52 - train: epoch 11/30, iter:220/236, loss: 1.2677, lr: 0.000864
+2026-10-12 17:33:21 - val epoch: 11, loss: 0.0000, acc: 93.58%, dice/f1: 86.04%, miou: 77.98%, sens: 81.26%, spec: 97.55%
+2026-10-12 17:33:21 - --> No improvement for 2/10 epoch(s). (Best: Epoch 9, Dice=87.00%)
+2026-10-12 17:33:31 - train: epoch 12/30, iter:0/236, loss: 1.2305, lr: 0.000819
+2026-10-12 17:33:33 - train: epoch 12/30, iter:20/236, loss: 1.1399, lr: 0.000819
+2026-10-12 17:33:34 - train: epoch 12/30, iter:40/236, loss: 1.2557, lr: 0.000819
+2026-10-12 17:33:35 - train: epoch 12/30, iter:60/236, loss: 1.2493, lr: 0.000819
+2026-10-12 17:33:37 - train: epoch 12/30, iter:80/236, loss: 1.2612, lr: 0.000819
+2026-10-12 17:33:38 - train: epoch 12/30, iter:100/236, loss: 1.2601, lr: 0.000819
+2026-10-12 17:33:40 - train: epoch 12/30, iter:120/236, loss: 1.2481, lr: 0.000819
+2026-10-12 17:33:41 - train: epoch 12/30, iter:140/236, loss: 1.2571, lr: 0.000819
+2026-10-12 17:33:43 - train: epoch 12/30, iter:160/236, loss: 1.2674, lr: 0.000819
+2026-10-12 17:33:44 - train: epoch 12/30, iter:180/236, loss: 1.2610, lr: 0.000819
+2026-10-12 17:33:46 - train: epoch 12/30, iter:200/236, loss: 1.2713, lr: 0.000819
+2026-10-12 17:33:47 - train: epoch 12/30, iter:220/236, loss: 1.2628, lr: 0.000819
+2026-10-12 17:34:16 - val epoch: 12, loss: 0.0000, acc: 93.76%, dice/f1: 86.73%, miou: 78.63%, sens: 83.73%, spec: 96.99%
+2026-10-12 17:34:16 - --> No improvement for 3/10 epoch(s). (Best: Epoch 9, Dice=87.00%)
+2026-10-12 17:34:26 - train: epoch 13/30, iter:0/236, loss: 1.1624, lr: 0.000768
+2026-10-12 17:34:28 - train: epoch 13/30, iter:20/236, loss: 1.1677, lr: 0.000768
+2026-10-12 17:34:29 - train: epoch 13/30, iter:40/236, loss: 1.1941, lr: 0.000768
+2026-10-12 17:34:31 - train: epoch 13/30, iter:60/236, loss: 1.1862, lr: 0.000768
+2026-10-12 17:34:32 - train: epoch 13/30, iter:80/236, loss: 1.2130, lr: 0.000768
+2026-10-12 17:34:34 - train: epoch 13/30, iter:100/236, loss: 1.2103, lr: 0.000768
+2026-10-12 17:34:35 - train: epoch 13/30, iter:120/236, loss: 1.2141, lr: 0.000768
+2026-10-12 17:34:37 - train: epoch 13/30, iter:140/236, loss: 1.2077, lr: 0.000768
+2026-10-12 17:34:38 - train: epoch 13/30, iter:160/236, loss: 1.2079, lr: 0.000768
+2026-10-12 17:34:40 - train: epoch 13/30, iter:180/236, loss: 1.2076, lr: 0.000768
+2026-10-12 17:34:41 - train: epoch 13/30, iter:200/236, loss: 1.2211, lr: 0.000768
+2026-10-12 17:34:43 - train: epoch 13/30, iter:220/236, loss: 1.2233, lr: 0.000768
+2026-10-12 17:35:12 - val epoch: 13, loss: 0.0000, acc: 93.85%, dice/f1: 86.99%, miou: 79.04%, sens: 84.53%, spec: 96.84%
+2026-10-12 17:35:12 - --> Saved new BEST checkpoint at epoch 13: Dice=86.99%, Acc=93.85%, mIoU=79.04%
+2026-10-12 17:35:22 - train: epoch 14/30, iter:0/236, loss: 1.8667, lr: 0.000713
+2026-10-12 17:35:23 - train: epoch 14/30, iter:20/236, loss: 1.3184, lr: 0.000713
+2026-10-12 17:35:25 - train: epoch 14/30, iter:40/236, loss: 1.2347, lr: 0.000713
+2026-10-12 17:35:26 - train: epoch 14/30, iter:60/236, loss: 1.2199, lr: 0.000713
+2026-10-12 17:35:28 - train: epoch 14/30, iter:80/236, loss: 1.2118, lr: 0.000713
+2026-10-12 17:35:29 - train: epoch 14/30, iter:100/236, loss: 1.2012, lr: 0.000713
+2026-10-12 17:35:30 - train: epoch 14/30, iter:120/236, loss: 1.2105, lr: 0.000713
+2026-10-12 17:35:32 - train: epoch 14/30, iter:140/236, loss: 1.1986, lr: 0.000713
+2026-10-12 17:35:33 - train: epoch 14/30, iter:160/236, loss: 1.1913, lr: 0.000713
+2026-10-12 17:35:35 - train: epoch 14/30, iter:180/236, loss: 1.1892, lr: 0.000713
+2026-10-12 17:35:36 - train: epoch 14/30, iter:200/236, loss: 1.1874, lr: 0.000713
+2026-10-12 17:35:38 - train: epoch 14/30, iter:220/236, loss: 1.1889, lr: 0.000713
+2026-10-12 17:36:07 - val epoch: 14, loss: 0.0000, acc: 93.70%, dice/f1: 86.87%, miou: 78.38%, sens: 85.59%, spec: 96.31%
+2026-10-12 17:36:07 - --> No improvement for 1/10 epoch(s). (Best: Epoch 13, Dice=86.99%)
+2026-10-12 17:36:17 - train: epoch 15/30, iter:0/236, loss: 1.3086, lr: 0.000655
+2026-10-12 17:36:19 - train: epoch 15/30, iter:20/236, loss: 1.1632, lr: 0.000655
+2026-10-12 17:36:20 - train: epoch 15/30, iter:40/236, loss: 1.1674, lr: 0.000655
+2026-10-12 17:36:22 - train: epoch 15/30, iter:60/236, loss: 1.2039, lr: 0.000655
+2026-10-12 17:36:23 - train: epoch 15/30, iter:80/236, loss: 1.2166, lr: 0.000655
+2026-10-12 17:36:25 - train: epoch 15/30, iter:100/236, loss: 1.2054, lr: 0.000655
+2026-10-12 17:36:26 - train: epoch 15/30, iter:120/236, loss: 1.2070, lr: 0.000655
+2026-10-12 17:36:28 - train: epoch 15/30, iter:140/236, loss: 1.2014, lr: 0.000655
+2026-10-12 17:36:29 - train: epoch 15/30, iter:160/236, loss: 1.2006, lr: 0.000655
+2026-10-12 17:36:31 - train: epoch 15/30, iter:180/236, loss: 1.1994, lr: 0.000655
+2026-10-12 17:36:32 - train: epoch 15/30, iter:200/236, loss: 1.1940, lr: 0.000655
+2026-10-12 17:36:34 - train: epoch 15/30, iter:220/236, loss: 1.1828, lr: 0.000655
+2026-10-12 17:37:02 - val epoch: 15, loss: 0.0000, acc: 92.92%, dice/f1: 84.05%, miou: 76.42%, sens: 76.68%, spec: 98.14%
+2026-10-12 17:37:03 - --> No improvement for 2/10 epoch(s). (Best: Epoch 13, Dice=86.99%)
+2026-10-12 17:37:13 - train: epoch 16/30, iter:0/236, loss: 1.3734, lr: 0.000594
+2026-10-12 17:37:14 - train: epoch 16/30, iter:20/236, loss: 1.1437, lr: 0.000594
+2026-10-12 17:37:16 - train: epoch 16/30, iter:40/236, loss: 1.1839, lr: 0.000594
+2026-10-12 17:37:17 - train: epoch 16/30, iter:60/236, loss: 1.1724, lr: 0.000594
+2026-10-12 17:37:19 - train: epoch 16/30, iter:80/236, loss: 1.1608, lr: 0.000594
+2026-10-12 17:37:20 - train: epoch 16/30, iter:100/236, loss: 1.1835, lr: 0.000594
+2026-10-12 17:37:22 - train: epoch 16/30, iter:120/236, loss: 1.1951, lr: 0.000594
+2026-10-12 17:37:23 - train: epoch 16/30, iter:140/236, loss: 1.1896, lr: 0.000594
+2026-10-12 17:37:25 - train: epoch 16/30, iter:160/236, loss: 1.1734, lr: 0.000594
+2026-10-12 17:37:26 - train: epoch 16/30, iter:180/236, loss: 1.1729, lr: 0.000594
+2026-10-12 17:37:28 - train: epoch 16/30, iter:200/236, loss: 1.1650, lr: 0.000594
+2026-10-12 17:37:29 - train: epoch 16/30, iter:220/236, loss: 1.1743, lr: 0.000594
+2026-10-12 17:37:57 - val epoch: 16, loss: 0.0000, acc: 93.51%, dice/f1: 86.80%, miou: 78.61%, sens: 87.70%, spec: 95.37%
+2026-10-12 17:37:57 - --> No improvement for 3/10 epoch(s). (Best: Epoch 13, Dice=86.99%)
+2026-10-12 17:38:08 - train: epoch 17/30, iter:0/236, loss: 1.7001, lr: 0.000531
+2026-10-12 17:38:09 - train: epoch 17/30, iter:20/236, loss: 1.1765, lr: 0.000531
+2026-10-12 17:38:11 - train: epoch 17/30, iter:40/236, loss: 1.1996, lr: 0.000531
+2026-10-12 17:38:12 - train: epoch 17/30, iter:60/236, loss: 1.1868, lr: 0.000531
+2026-10-12 17:38:14 - train: epoch 17/30, iter:80/236, loss: 1.1830, lr: 0.000531
+2026-10-12 17:38:15 - train: epoch 17/30, iter:100/236, loss: 1.1807, lr: 0.000531
+2026-10-12 17:38:17 - train: epoch 17/30, iter:120/236, loss: 1.1925, lr: 0.000531
+2026-10-12 17:38:18 - train: epoch 17/30, iter:140/236, loss: 1.2017, lr: 0.000531
+2026-10-12 17:38:20 - train: epoch 17/30, iter:160/236, loss: 1.1942, lr: 0.000531
+2026-10-12 17:38:21 - train: epoch 17/30, iter:180/236, loss: 1.1898, lr: 0.000531
+2026-10-12 17:38:23 - train: epoch 17/30, iter:200/236, loss: 1.1763, lr: 0.000531
+2026-10-12 17:38:24 - train: epoch 17/30, iter:220/236, loss: 1.1821, lr: 0.000531
+2026-10-12 17:38:53 - val epoch: 17, loss: 0.0000, acc: 94.18%, dice/f1: 87.76%, miou: 79.59%, sens: 85.73%, spec: 96.90%
+2026-10-12 17:38:53 - --> Saved new BEST checkpoint at epoch 17: Dice=87.76%, Acc=94.18%, mIoU=79.59%
+2026-10-12 17:39:03 - train: epoch 18/30, iter:0/236, loss: 0.8649, lr: 0.000469
+2026-10-12 17:39:05 - train: epoch 18/30, iter:20/236, loss: 1.1318, lr: 0.000469
+2026-10-12 17:39:06 - train: epoch 18/30, iter:40/236, loss: 1.1678, lr: 0.000469
+2026-10-12 17:39:08 - train: epoch 18/30, iter:60/236, loss: 1.2025, lr: 0.000469
+2026-10-12 17:39:09 - train: epoch 18/30, iter:80/236, loss: 1.1972, lr: 0.000469
+2026-10-12 17:39:11 - train: epoch 18/30, iter:100/236, loss: 1.2012, lr: 0.000469
+2026-10-12 17:39:12 - train: epoch 18/30, iter:120/236, loss: 1.1829, lr: 0.000469
+2026-10-12 17:39:14 - train: epoch 18/30, iter:140/236, loss: 1.1693, lr: 0.000469
+2026-10-12 17:39:15 - train: epoch 18/30, iter:160/236, loss: 1.1621, lr: 0.000469
+2026-10-12 17:39:17 - train: epoch 18/30, iter:180/236, loss: 1.1574, lr: 0.000469
+2026-10-12 17:39:18 - train: epoch 18/30, iter:200/236, loss: 1.1567, lr: 0.000469
+2026-10-12 17:39:20 - train: epoch 18/30, iter:220/236, loss: 1.1517, lr: 0.000469
+2026-10-12 17:39:49 - val epoch: 18, loss: 0.0000, acc: 93.68%, dice/f1: 86.77%, miou: 78.35%, sens: 85.17%, spec: 96.42%
+2026-10-12 17:39:49 - --> No improvement for 1/10 epoch(s). (Best: Epoch 17, Dice=87.76%)
+2026-10-12 17:39:59 - train: epoch 19/30, iter:0/236, loss: 1.7611, lr: 0.000406
+2026-10-12 17:40:00 - train: epoch 19/30, iter:20/236, loss: 1.1436, lr: 0.000406
+2026-10-12 17:40:02 - train: epoch 19/30, iter:40/236, loss: 1.1093, lr: 0.000406
+2026-10-12 17:40:03 - train: epoch 19/30, iter:60/236, loss: 1.1291, lr: 0.000406
+2026-10-12 17:40:05 - train: epoch 19/30, iter:80/236, loss: 1.1310, lr: 0.000406
+2026-10-12 17:40:06 - train: epoch 19/30, iter:100/236, loss: 1.1377, lr: 0.000406
+2026-10-12 17:40:08 - train: epoch 19/30, iter:120/236, loss: 1.1353, lr: 0.000406
+2026-10-12 17:40:09 - train: epoch 19/30, iter:140/236, loss: 1.1459, lr: 0.000406
+2026-10-12 17:40:11 - train: epoch 19/30, iter:160/236, loss: 1.1439, lr: 0.000406
+2026-10-12 17:40:12 - train: epoch 19/30, iter:180/236, loss: 1.1433, lr: 0.000406
+2026-10-12 17:40:14 - train: epoch 19/30, iter:200/236, loss: 1.1304, lr: 0.000406
+2026-10-12 17:40:15 - train: epoch 19/30, iter:220/236, loss: 1.1378, lr: 0.000406
+2026-10-12 17:40:43 - val epoch: 19, loss: 0.0000, acc: 94.40%, dice/f1: 87.95%, miou: 80.22%, sens: 83.98%, spec: 97.75%
+2026-10-12 17:40:43 - --> Saved new BEST checkpoint at epoch 19: Dice=87.95%, Acc=94.40%, mIoU=80.22%
+2026-10-12 17:40:54 - train: epoch 20/30, iter:0/236, loss: 0.8617, lr: 0.000345
+2026-10-12 17:40:55 - train: epoch 20/30, iter:20/236, loss: 1.1435, lr: 0.000345
+2026-10-12 17:40:57 - train: epoch 20/30, iter:40/236, loss: 1.1243, lr: 0.000345
+2026-10-12 17:40:58 - train: epoch 20/30, iter:60/236, loss: 1.1213, lr: 0.000345
+2026-10-12 17:41:00 - train: epoch 20/30, iter:80/236, loss: 1.1439, lr: 0.000345
+2026-10-12 17:41:01 - train: epoch 20/30, iter:100/236, loss: 1.1245, lr: 0.000345
+2026-10-12 17:41:03 - train: epoch 20/30, iter:120/236, loss: 1.1138, lr: 0.000345
+2026-10-12 17:41:04 - train: epoch 20/30, iter:140/236, loss: 1.1189, lr: 0.000345
+2026-10-12 17:41:06 - train: epoch 20/30, iter:160/236, loss: 1.1295, lr: 0.000345
+2026-10-12 17:41:07 - train: epoch 20/30, iter:180/236, loss: 1.1300, lr: 0.000345
+2026-10-12 17:41:09 - train: epoch 20/30, iter:200/236, loss: 1.1292, lr: 0.000345
+2026-10-12 17:41:10 - train: epoch 20/30, iter:220/236, loss: 1.1221, lr: 0.000345
+2026-10-12 17:41:39 - val epoch: 20, loss: 0.0000, acc: 94.23%, dice/f1: 88.04%, miou: 79.86%, sens: 87.19%, spec: 96.50%
+2026-10-12 17:41:39 - --> No improvement for 1/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:41:49 - train: epoch 21/30, iter:0/236, loss: 1.1042, lr: 0.000287
+2026-10-12 17:41:51 - train: epoch 21/30, iter:20/236, loss: 1.0824, lr: 0.000287
+2026-10-12 17:41:52 - train: epoch 21/30, iter:40/236, loss: 1.1161, lr: 0.000287
+2026-10-12 17:41:54 - train: epoch 21/30, iter:60/236, loss: 1.1119, lr: 0.000287
+2026-10-12 17:41:55 - train: epoch 21/30, iter:80/236, loss: 1.1148, lr: 0.000287
+2026-10-12 17:41:57 - train: epoch 21/30, iter:100/236, loss: 1.1142, lr: 0.000287
+2026-10-12 17:41:58 - train: epoch 21/30, iter:120/236, loss: 1.1306, lr: 0.000287
+2026-10-12 17:42:00 - train: epoch 21/30, iter:140/236, loss: 1.1383, lr: 0.000287
+2026-10-12 17:42:01 - train: epoch 21/30, iter:160/236, loss: 1.1379, lr: 0.000287
+2026-10-12 17:42:03 - train: epoch 21/30, iter:180/236, loss: 1.1351, lr: 0.000287
+2026-10-12 17:42:04 - train: epoch 21/30, iter:200/236, loss: 1.1414, lr: 0.000287
+2026-10-12 17:42:06 - train: epoch 21/30, iter:220/236, loss: 1.1321, lr: 0.000287
+2026-10-12 17:42:34 - val epoch: 21, loss: 0.0000, acc: 94.35%, dice/f1: 87.88%, miou: 80.01%, sens: 84.11%, spec: 97.65%
+2026-10-12 17:42:34 - --> No improvement for 2/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:42:44 - train: epoch 22/30, iter:0/236, loss: 0.9449, lr: 0.000232
+2026-10-12 17:42:46 - train: epoch 22/30, iter:20/236, loss: 1.0495, lr: 0.000232
+2026-10-12 17:42:47 - train: epoch 22/30, iter:40/236, loss: 1.0939, lr: 0.000232
+2026-10-12 17:42:49 - train: epoch 22/30, iter:60/236, loss: 1.1148, lr: 0.000232
+2026-10-12 17:42:50 - train: epoch 22/30, iter:80/236, loss: 1.1140, lr: 0.000232
+2026-10-12 17:42:52 - train: epoch 22/30, iter:100/236, loss: 1.0996, lr: 0.000232
+2026-10-12 17:42:53 - train: epoch 22/30, iter:120/236, loss: 1.1073, lr: 0.000232
+2026-10-12 17:42:55 - train: epoch 22/30, iter:140/236, loss: 1.1184, lr: 0.000232
+2026-10-12 17:42:56 - train: epoch 22/30, iter:160/236, loss: 1.1047, lr: 0.000232
+2026-10-12 17:42:58 - train: epoch 22/30, iter:180/236, loss: 1.1104, lr: 0.000232
+2026-10-12 17:42:59 - train: epoch 22/30, iter:200/236, loss: 1.1001, lr: 0.000232
+2026-10-12 17:43:01 - train: epoch 22/30, iter:220/236, loss: 1.1078, lr: 0.000232
+2026-10-12 17:43:29 - val epoch: 22, loss: 0.0000, acc: 93.68%, dice/f1: 87.36%, miou: 78.83%, sens: 89.75%, spec: 94.94%
+2026-10-12 17:43:29 - --> No improvement for 3/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:43:39 - train: epoch 23/30, iter:0/236, loss: 1.4311, lr: 0.000181
+2026-10-12 17:43:41 - train: epoch 23/30, iter:20/236, loss: 1.1108, lr: 0.000181
+2026-10-12 17:43:42 - train: epoch 23/30, iter:40/236, loss: 1.0896, lr: 0.000181
+2026-10-12 17:43:44 - train: epoch 23/30, iter:60/236, loss: 1.0577, lr: 0.000181
+2026-10-12 17:43:45 - train: epoch 23/30, iter:80/236, loss: 1.0737, lr: 0.000181
+2026-10-12 17:43:47 - train: epoch 23/30, iter:100/236, loss: 1.0844, lr: 0.000181
+2026-10-12 17:43:48 - train: epoch 23/30, iter:120/236, loss: 1.0762, lr: 0.000181
+2026-10-12 17:43:50 - train: epoch 23/30, iter:140/236, loss: 1.0820, lr: 0.000181
+2026-10-12 17:43:51 - train: epoch 23/30, iter:160/236, loss: 1.0821, lr: 0.000181
+2026-10-12 17:43:53 - train: epoch 23/30, iter:180/236, loss: 1.0913, lr: 0.000181
+2026-10-12 17:43:55 - train: epoch 23/30, iter:200/236, loss: 1.0883, lr: 0.000181
+2026-10-12 17:43:58 - train: epoch 23/30, iter:220/236, loss: 1.1044, lr: 0.000181
+2026-10-12 17:44:34 - val epoch: 23, loss: 0.0000, acc: 94.18%, dice/f1: 87.74%, miou: 79.88%, sens: 85.55%, spec: 96.96%
+2026-10-12 17:44:34 - --> No improvement for 4/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:44:45 - train: epoch 24/30, iter:0/236, loss: 0.8018, lr: 0.000136
+2026-10-12 17:44:47 - train: epoch 24/30, iter:20/236, loss: 1.1204, lr: 0.000136
+2026-10-12 17:44:49 - train: epoch 24/30, iter:40/236, loss: 1.1133, lr: 0.000136
+2026-10-12 17:44:51 - train: epoch 24/30, iter:60/236, loss: 1.1323, lr: 0.000136
+2026-10-12 17:44:52 - train: epoch 24/30, iter:80/236, loss: 1.1579, lr: 0.000136
+2026-10-12 17:44:54 - train: epoch 24/30, iter:100/236, loss: 1.1363, lr: 0.000136
+2026-10-12 17:44:57 - train: epoch 24/30, iter:120/236, loss: 1.1220, lr: 0.000136
+2026-10-12 17:45:00 - train: epoch 24/30, iter:140/236, loss: 1.1320, lr: 0.000136
+2026-10-12 17:45:02 - train: epoch 24/30, iter:160/236, loss: 1.1273, lr: 0.000136
+2026-10-12 17:45:04 - train: epoch 24/30, iter:180/236, loss: 1.1232, lr: 0.000136
+2026-10-12 17:45:06 - train: epoch 24/30, iter:200/236, loss: 1.1186, lr: 0.000136
+2026-10-12 17:45:08 - train: epoch 24/30, iter:220/236, loss: 1.1036, lr: 0.000136
+2026-10-12 17:45:40 - val epoch: 24, loss: 0.0000, acc: 94.24%, dice/f1: 87.77%, miou: 79.96%, sens: 84.96%, spec: 97.22%
+2026-10-12 17:45:40 - --> No improvement for 5/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:45:51 - train: epoch 25/30, iter:0/236, loss: 0.9532, lr: 0.000095
+2026-10-12 17:45:53 - train: epoch 25/30, iter:20/236, loss: 1.0592, lr: 0.000095
+2026-10-12 17:45:54 - train: epoch 25/30, iter:40/236, loss: 1.0878, lr: 0.000095
+2026-10-12 17:45:56 - train: epoch 25/30, iter:60/236, loss: 1.0716, lr: 0.000095
+2026-10-12 17:45:58 - train: epoch 25/30, iter:80/236, loss: 1.0914, lr: 0.000095
+2026-10-12 17:46:00 - train: epoch 25/30, iter:100/236, loss: 1.1058, lr: 0.000095
+2026-10-12 17:46:02 - train: epoch 25/30, iter:120/236, loss: 1.1140, lr: 0.000095
+2026-10-12 17:46:03 - train: epoch 25/30, iter:140/236, loss: 1.0983, lr: 0.000095
+2026-10-12 17:46:05 - train: epoch 25/30, iter:160/236, loss: 1.0982, lr: 0.000095
+2026-10-12 17:46:07 - train: epoch 25/30, iter:180/236, loss: 1.0936, lr: 0.000095
+2026-10-12 17:46:08 - train: epoch 25/30, iter:200/236, loss: 1.0955, lr: 0.000095
+2026-10-12 17:46:10 - train: epoch 25/30, iter:220/236, loss: 1.0885, lr: 0.000095
+2026-10-12 17:47:50 - val epoch: 25, loss: 0.0000, acc: 94.19%, dice/f1: 87.82%, miou: 79.91%, sens: 86.08%, spec: 96.80%
+2026-10-12 17:47:50 - --> No improvement for 6/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:48:12 - train: epoch 26/30, iter:0/236, loss: 1.0277, lr: 0.000062
+2026-10-12 17:48:19 - train: epoch 26/30, iter:20/236, loss: 1.1142, lr: 0.000062
+2026-10-12 17:48:27 - train: epoch 26/30, iter:40/236, loss: 1.1011, lr: 0.000062
+2026-10-12 17:48:35 - train: epoch 26/30, iter:60/236, loss: 1.0988, lr: 0.000062
+2026-10-12 17:48:43 - train: epoch 26/30, iter:80/236, loss: 1.1135, lr: 0.000062
+2026-10-12 17:48:51 - train: epoch 26/30, iter:100/236, loss: 1.1068, lr: 0.000062
+2026-10-12 17:48:58 - train: epoch 26/30, iter:120/236, loss: 1.0981, lr: 0.000062
+2026-10-12 17:49:06 - train: epoch 26/30, iter:140/236, loss: 1.0818, lr: 0.000062
+2026-10-12 17:49:14 - train: epoch 26/30, iter:160/236, loss: 1.0644, lr: 0.000062
+2026-10-12 17:49:21 - train: epoch 26/30, iter:180/236, loss: 1.0906, lr: 0.000062
+2026-10-12 17:49:29 - train: epoch 26/30, iter:200/236, loss: 1.0888, lr: 0.000062
+2026-10-12 17:49:37 - train: epoch 26/30, iter:220/236, loss: 1.0875, lr: 0.000062
+2026-10-12 17:50:40 - val epoch: 26, loss: 0.0000, acc: 94.25%, dice/f1: 87.83%, miou: 79.92%, sens: 85.22%, spec: 97.16%
+2026-10-12 17:50:40 - --> No improvement for 7/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:50:50 - train: epoch 27/30, iter:0/236, loss: 1.0001, lr: 0.000035
+2026-10-12 17:50:52 - train: epoch 27/30, iter:20/236, loss: 1.0088, lr: 0.000035
+2026-10-12 17:50:53 - train: epoch 27/30, iter:40/236, loss: 1.0590, lr: 0.000035
+2026-10-12 17:50:55 - train: epoch 27/30, iter:60/236, loss: 1.0586, lr: 0.000035
+2026-10-12 17:50:56 - train: epoch 27/30, iter:80/236, loss: 1.0813, lr: 0.000035
+2026-10-12 17:50:58 - train: epoch 27/30, iter:100/236, loss: 1.0791, lr: 0.000035
+2026-10-12 17:50:59 - train: epoch 27/30, iter:120/236, loss: 1.0751, lr: 0.000035
+2026-10-12 17:51:01 - train: epoch 27/30, iter:140/236, loss: 1.0889, lr: 0.000035
+2026-10-12 17:51:02 - train: epoch 27/30, iter:160/236, loss: 1.0966, lr: 0.000035
+2026-10-12 17:51:04 - train: epoch 27/30, iter:180/236, loss: 1.1010, lr: 0.000035
+2026-10-12 17:51:05 - train: epoch 27/30, iter:200/236, loss: 1.0865, lr: 0.000035
+2026-10-12 17:51:07 - train: epoch 27/30, iter:220/236, loss: 1.0827, lr: 0.000035
+2026-10-12 17:51:36 - val epoch: 27, loss: 0.0000, acc: 94.23%, dice/f1: 87.97%, miou: 79.96%, sens: 86.70%, spec: 96.65%
+2026-10-12 17:51:36 - --> No improvement for 8/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:51:46 - train: epoch 28/30, iter:0/236, loss: 1.0174, lr: 0.000016
+2026-10-12 17:51:48 - train: epoch 28/30, iter:20/236, loss: 0.9979, lr: 0.000016
+2026-10-12 17:51:49 - train: epoch 28/30, iter:40/236, loss: 1.0590, lr: 0.000016
+2026-10-12 17:51:51 - train: epoch 28/30, iter:60/236, loss: 1.0963, lr: 0.000016
+2026-10-12 17:51:52 - train: epoch 28/30, iter:80/236, loss: 1.1146, lr: 0.000016
+2026-10-12 17:51:54 - train: epoch 28/30, iter:100/236, loss: 1.1096, lr: 0.000016
+2026-10-12 17:51:55 - train: epoch 28/30, iter:120/236, loss: 1.1122, lr: 0.000016
+2026-10-12 17:51:57 - train: epoch 28/30, iter:140/236, loss: 1.0858, lr: 0.000016
+2026-10-12 17:51:58 - train: epoch 28/30, iter:160/236, loss: 1.0882, lr: 0.000016
+2026-10-12 17:52:00 - train: epoch 28/30, iter:180/236, loss: 1.0925, lr: 0.000016
+2026-10-12 17:52:01 - train: epoch 28/30, iter:200/236, loss: 1.0923, lr: 0.000016
+2026-10-12 17:52:03 - train: epoch 28/30, iter:220/236, loss: 1.0952, lr: 0.000016
+2026-10-12 17:52:32 - val epoch: 28, loss: 0.0000, acc: 94.21%, dice/f1: 87.87%, miou: 79.89%, sens: 86.23%, spec: 96.77%
+2026-10-12 17:52:32 - --> No improvement for 9/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:52:42 - train: epoch 29/30, iter:0/236, loss: 0.8321, lr: 0.000004
+2026-10-12 17:52:43 - train: epoch 29/30, iter:20/236, loss: 1.0516, lr: 0.000004
+2026-10-12 17:52:45 - train: epoch 29/30, iter:40/236, loss: 1.0067, lr: 0.000004
+2026-10-12 17:52:47 - train: epoch 29/30, iter:60/236, loss: 1.0529, lr: 0.000004
+2026-10-12 17:52:48 - train: epoch 29/30, iter:80/236, loss: 1.0364, lr: 0.000004
+2026-10-12 17:52:50 - train: epoch 29/30, iter:100/236, loss: 1.0514, lr: 0.000004
+2026-10-12 17:52:51 - train: epoch 29/30, iter:120/236, loss: 1.0688, lr: 0.000004
+2026-10-12 17:52:53 - train: epoch 29/30, iter:140/236, loss: 1.0767, lr: 0.000004
+2026-10-12 17:52:54 - train: epoch 29/30, iter:160/236, loss: 1.0719, lr: 0.000004
+2026-10-12 17:52:56 - train: epoch 29/30, iter:180/236, loss: 1.0804, lr: 0.000004
+2026-10-12 17:52:57 - train: epoch 29/30, iter:200/236, loss: 1.0785, lr: 0.000004
+2026-10-12 17:52:59 - train: epoch 29/30, iter:220/236, loss: 1.0884, lr: 0.000004
+2026-10-12 17:53:28 - val epoch: 29, loss: 0.0000, acc: 94.28%, dice/f1: 88.03%, miou: 80.09%, sens: 86.39%, spec: 96.82%
+2026-10-12 17:53:28 - --> No improvement for 10/10 epoch(s). (Best: Epoch 19, Dice=87.95%)
+2026-10-12 17:53:28 - #----------Early Stopping Triggered at Epoch 29 (Patience 10 Reached)----------#
+2026-10-12 17:55:10 - 
+#====================== TEST EVALUATION RESULTS ======================#
+Pixel Accuracy : 94.49% (0.9449)
+Dice / F1 Score: 88.12% (0.8812)
+mIoU (Jaccard) : 80.51% (0.8051)
+Sensitivity    : 83.93% (0.8393)
+Specificity    : 97.89% (0.9789)
+#=====================================================================#
